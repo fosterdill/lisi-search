@@ -1,6 +1,6 @@
 const Vue = require('./vue.js');
 const VueRouter = require('vue-router');
-const Recommended = require('./recommended');
+const Recommended = require('./components/recommended/recommended.js');
 
 Vue.use(VueRouter);
 
