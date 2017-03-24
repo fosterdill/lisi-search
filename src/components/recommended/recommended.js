@@ -10,6 +10,10 @@ module.exports = {
       styleObject: {
         root: {
           height: "100%"
+        },
+
+        searchIcon: {
+          fontSize: "30px"
         }
       }
     }

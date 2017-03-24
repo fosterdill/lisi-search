@@ -22,19 +22,17 @@ a:active {
   color: #5B5B5B;
 }
 
-h1 {
+h3 {
   padding: 10px;
+  background: #1E1E1E;
 }
 
 #app {
   height: 100%;
 }
 
-h1 {
-  background: #1E1E1E;
-}
-
 input[type="text"] {
+  font-size: 20px;
   background: #1E1E1E;
   border: none;
   border-bottom: 1px solid #908E8E;
