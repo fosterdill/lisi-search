@@ -1,13 +1,17 @@
 const requireTemplate = require('../../require-template');
-const templateString = requireTemplate('./components/recommended/recommended.html');
 
 module.exports = {
-  template: templateString,
+  template: requireTemplate('./components/recommended/recommended.html'),
+  components: {
+    "header-dropdown": require('../header-dropdown/header-dropdown')
+  },
   data: function () {
     return {
       styleObject: {
-        background: 'red'
+        root: {
+          height: "100%"
+        }
       }
-    };
+    }
   }
 };
