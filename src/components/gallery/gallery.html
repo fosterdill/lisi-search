@@ -1,0 +1,7 @@
+<div class="container">
+  <div v-for="currentRowNumber in rowCount" class="row">
+    <div class="three columns" v-for="currentColumnNumber in 4">
+      <img style="max-width: 100%;" :src="movies.getIn([`${(currentRowNumber - 1) * 4 + currentColumnNumber}`, 'poster_240x342'])" />
+    </div>
+  </div>
+</div>

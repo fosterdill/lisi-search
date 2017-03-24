@@ -9,13 +9,13 @@ module.exports = {
   
   components: {
     "header-dropdown": require('../header-dropdown/header-dropdown'),
-    "loader": require('../loader/loader')
+    "loader": require('../loader/loader'),
+    "gallery": require('../gallery/gallery'),
   },
 
   methods: {
     updateState() {
       this.movies = store.getState().getIn(['movies', 'all']);
-      console.log(this.movies.get('loading'));
     }
   },
 
@@ -39,6 +39,9 @@ module.exports = {
 
         searchIcon: {
           fontSize: "30px"
+        },
+
+        header: {
         }
       }
     }

@@ -1,12 +1,15 @@
 <div :style="styleObject.root">
-  <header-dropdown class="u-pull-right" text="Movies & Shows" />
-  <input style="margin: 12px;" class="u-pull-left" type="text" />
+  <div style="width: 100%; z-index: 1; top: 0; position: fixed;">
+    <header-dropdown class="u-pull-right" text="Movies & Shows" />
+    <input style="margin: 12px;" class="u-pull-left" type="text" />
 
-  <h3>
-    <a href="#">
-      <i :style="styleObject.searchIcon" class="icon-search" />
-    </a>
-  </h3>
+    <h3 :style="styleObject.header">
+      <a href="#">
+        <i :style="styleObject.searchIcon" class="icon-search" />
+      </a>
+    </h3>
+  </div>
 
   <loader v-if="movies.get('loading')" />
+  <gallery v-else :movies="movies.get('results')" />
 </div>
