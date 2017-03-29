@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
-    "start": "cp dev.js env.js && ./node_modules/electron/dist/Electron.app/Contents/MacOS/Electron .",
-    "build": "cp prod.js env.js && ./node_modules/electron-packager/cli.js . --platform=darwin --overwrite --extra-resource=node_modules --out=build"
+    "start": "cp dev.js env.js && eval '$(node run-electron.js)'",
+    "build": "cp prod.js env.js && ./node_modules/electron-packager/cli.js . --overwrite --out=build"
   },
   "description": "Desktop app for searching movies and tv shows",
   "devDependencies": {
     "electron": "^1.6.2",
-    "electron-packager": "^8.6.0",
+    "electron-packager": "^8.6.0"
+  },
+  "dependencies": {
     "immutable": "^3.8.1",
     "redux": "^3.6.0",
     "vue": "^2.2.4",
