@@ -1,12 +1,14 @@
 <div :style="styleObject.root">
   <div style="width: 100%; z-index: 1; top: 0; position: fixed;">
-    <header-dropdown class="u-pull-right" text="Movies & Shows" />
-    <input style="margin: 12px;" class="u-pull-left" type="text" />
-
     <h3 :style="styleObject.header">
-      <a href="#">
-        <i :style="styleObject.searchIcon" class="icon-search" />
-      </a>
+      <div class="u-pull-right">
+        <a class="u-pull-left" href="#">
+          <i :style="styleObject.searchIcon" class="icon-search" />
+        </a>
+        <input style="margin: 12px;" type="text" />
+      </div>
+
+      <header-dropdown text="Movies & Shows" />
     </h3>
   </div>
 
