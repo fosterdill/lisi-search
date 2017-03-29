@@ -2,10 +2,26 @@ const {ipcMain, app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 const env = require('./env');
+const requireTemplate = require('./src/require-template')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+
+ipcMain.on('open-url', (event, url, site) => {
+  let win = new BrowserWindow({width: 800, height: 600})
+
+  win.webContents.on('did-finish-load', function() {
+    win.webContents.executeJavaScript(requireTemplate(`./sites/${site}`));
+  });
+
+  win.on('closed', () => {
+    win = null
+  })
+
+  // Load a remote URL
+  win.loadURL(url)
+});
 
 function createWindow () {
   // Create the browser window.
